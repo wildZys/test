@@ -1,3 +1,7 @@
+/**
+ * cron "0 0 * * *"
+ * export iccck="token1 token2 token3"
+*/
 const axios = require('axios');
 const qs = require('querystring');
 
