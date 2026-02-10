@@ -1,0 +1,228 @@
+{
+  "id": "zhen_checkin_ecosystem",
+  "name": "珍宝自动签到生态",
+  "author": "@zhen",
+  "repo": "https://github.com/zhen/checkin-ecosystem",
+  "apps": [
+
+    {
+      "id": "zhen_task_creator",
+      "name": "✨ 新建签到任务",
+      "keys": [
+        "@zhen.task.name",
+        "@zhen.task.remark",
+        "@zhen.task.cron",
+        "@zhen.task.url",
+        "@zhen.task.method",
+        "@zhen.task.headers",
+        "@zhen.task.body",
+        "@zhen.task.template",
+        "@zhen.task.platform",
+        "@zhen.task.autoParse"
+      ],
+      "settings": [
+
+        {
+          "id": "@zhen.task.name",
+          "name": "任务名称",
+          "type": "text",
+          "desc": "填写签到任务名称"
+        },
+
+        {
+          "id": "@zhen.task.remark",
+          "name": "任务备注",
+          "type": "text",
+          "desc": "任务说明或备注"
+        },
+
+        {
+          "id": "@zhen.task.cron",
+          "name": "执行时间",
+          "type": "text",
+          "desc": "cron表达式，例如：0 9 * * *"
+        },
+
+        {
+          "id": "@zhen.task.url",
+          "name": "签到接口URL",
+          "type": "text"
+        },
+
+        {
+          "id": "@zhen.task.method",
+          "name": "请求方式",
+          "type": "selects",
+          "val": "POST",
+          "items": ["GET", "POST"]
+        },
+
+        {
+          "id": "@zhen.task.headers",
+          "name": "请求头",
+          "type": "textarea"
+        },
+
+        {
+          "id": "@zhen.task.body",
+          "name": "请求体",
+          "type": "textarea"
+        },
+
+        {
+          "id": "@zhen.task.autoParse",
+          "name": "自动解析身份参数",
+          "type": "boolean",
+          "val": true
+        },
+
+        {
+          "id": "@zhen.task.template",
+          "name": "业务模板",
+          "type": "selects",
+          "items": [
+            "单接口签到",
+            "签到+查询",
+            "签到+兑换",
+            "多接口任务链"
+          ]
+        },
+
+        {
+          "id": "@zhen.task.platform",
+          "name": "运行平台",
+          "type": "selects",
+          "items": [
+            "QuantumultX",
+            "Surge",
+            "Loon",
+            "青龙"
+          ]
+        }
+
+      ],
+      "scripts": [
+        {
+          "name": "🚀 生成签到脚本",
+          "script": "https://example.com/engine/generator.js"
+        }
+      ]
+    },
+
+
+
+    {
+      "id": "zhen_account_center",
+      "name": "👤 账号管理中心",
+      "keys": [
+        "@zhen.accounts"
+      ],
+      "settings": [
+        {
+          "id": "@zhen.accounts",
+          "name": "账号列表",
+          "type": "textarea",
+          "desc": "JSON格式账号数据"
+        }
+      ],
+      "scripts": [
+        {
+          "name": "➕ 新增账号",
+          "script": "https://example.com/engine/account_add.js"
+        },
+        {
+          "name": "🗑 删除账号",
+          "script": "https://example.com/engine/account_delete.js"
+        }
+      ]
+    },
+
+
+
+    {
+      "id": "zhen_template_center",
+      "name": "🧩 模板中心",
+      "keys": [
+        "@zhen.template.default"
+      ],
+      "settings": [
+        {
+          "id": "@zhen.template.default",
+          "name": "默认模板",
+          "type": "selects",
+          "items": [
+            "基础签到模板",
+            "高级任务链模板",
+            "兑换模板"
+          ]
+        }
+      ]
+    },
+
+
+
+    {
+      "id": "zhen_parser_tool",
+      "name": "🔍 抓包解析工具",
+      "keys": [
+        "@zhen.parser.rawData"
+      ],
+      "settings": [
+        {
+          "id": "@zhen.parser.rawData",
+          "name": "抓包原始数据",
+          "type": "textarea"
+        }
+      ],
+      "scripts": [
+        {
+          "name": "🔍 自动解析接口",
+          "script": "https://example.com/engine/parser.js"
+        }
+      ]
+    },
+
+
+
+    {
+      "id": "zhen_maintenance_center",
+      "name": "🔄 脚本维护中心",
+      "scripts": [
+        {
+          "name": "♻ 批量更新脚本",
+          "script": "https://example.com/engine/update_all.js"
+        },
+        {
+          "name": "🧹 清理无效任务",
+          "script": "https://example.com/engine/cleanup.js"
+        }
+      ]
+    },
+
+
+
+    {
+      "id": "zhen_system_setting",
+      "name": "⚙ 系统设置",
+      "keys": [
+        "@zhen.system.notify",
+        "@zhen.system.debug"
+      ],
+      "settings": [
+        {
+          "id": "@zhen.system.notify",
+          "name": "通知开关",
+          "type": "boolean",
+          "val": true
+        },
+        {
+          "id": "@zhen.system.debug",
+          "name": "调试模式",
+          "type": "boolean",
+          "val": false
+        }
+      ]
+    }
+
+  ]
+}
